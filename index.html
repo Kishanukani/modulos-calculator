@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MOD calculator</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>
+      enter the numbr
+      <input type="number" id="input" />
+    </div>
+    <div>enter the hashed <input type="number" id="input2" /></div>
+    <button id="calculate" type="submit" onclick="calculateModulo()">
+      calculate modulos
+    </button>
+    <div id="output"></div>
+  </body>
+  <script>
+    function calculateModulo() {
+      // Get input values
+      var number = document.getElementById("input").value;
+      var divisor = document.getElementById("input2").value;
+
+      // Check if both inputs are valid numbers
+      if (!isNaN(number) && !isNaN(divisor) && divisor != 0) {
+        // Calculate modulo
+        var result = number % divisor;
+
+        // Display the result
+        document.getElementById("output").innerHTML = "Result: " + result;
+      } else {
+        // Display an error message for invalid input
+        document.getElementById("output").innerHTML =
+          "Please enter valid numbers, and the divisor should not be zero.";
+      }
+    }
+  </script>
+</html>
